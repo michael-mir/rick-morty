@@ -1,0 +1,38 @@
+.field {
+  width: 100%;
+	cursor: text;
+	height: 50px;
+	padding: 10px;
+	@include d-flex;
+	transition: .25s;
+	border: $border gray;
+
+	&_error {
+		border-color: red;
+	}
+
+	&__icon {
+		@include size(30px);
+    @include d-flex;
+	}
+
+	input {
+		flex: 1;
+		padding: 0;
+		border: none;
+		outline: none;
+		font-size: 15px;
+		line-height: 20px;
+		background: transparent;
+    @include overflow-nowrap;
+
+    &:disabled,
+		&::placeholder {
+			color: gray;
+		}
+
+    &::placeholder {
+			user-select: none;
+		}
+	}
+}

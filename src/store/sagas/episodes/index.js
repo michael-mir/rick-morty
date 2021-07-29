@@ -8,11 +8,9 @@ import { GET_EPISODES_DATA } from '/store/types/episodes';
 
 export function* getEpisodesDataSaga({ payload }) {
   try {
+    const { results, info } = yield call(api.get, payload);
     const {
-      data: { results, info },
-    } = yield call(api.get, payload);
-    const {
-      entities: { messages: entities },
+      entities: { episodes: entities },
       result: ids,
     } = normalize(results, [episodesSchema]);
 
@@ -22,6 +20,6 @@ export function* getEpisodesDataSaga({ payload }) {
   }
 }
 
-export default function* chatsSagas() {
+export default function* episodesSagas() {
   yield takeLatest(GET_EPISODES_DATA, getEpisodesDataSaga);
 }

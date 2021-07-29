@@ -1,0 +1,18 @@
+.episodesList {
+  overflow-y: auto;
+  height: 100%;
+
+  .season {
+    &__header {
+      color: #141414;
+    }
+
+    &__episodes {
+      @include d-flex(flex-start, flex-start);
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+
+}

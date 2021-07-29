@@ -1,12 +1,14 @@
 * {
+  box-sizing: border-box;
+
   &::-webkit-scrollbar {
     width: 4px;
     border-radius: 2px;
-    background: $lime;
+    background: #fdb17e;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $orange;
+    background-color: #f60;
     border-radius: 2px;
     outline: none;
     border: 0;
@@ -23,13 +25,6 @@ body {
   overflow: hidden;
 }
 
-#root {
-  height: 100vh;
-  @include d-flex;
-  align-self: center;
-  flex-direction: column;
-}
-
 button {
   user-select: none;
   cursor: pointer;
@@ -42,7 +37,7 @@ b {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 *:not(svg, path) {
@@ -51,10 +46,10 @@ a {
 
 textarea,
 input {
-  caret-color: $black;
+  caret-color: #f60;
 
   &:focus {
-    border-color: $black;
+    border-color: #f60;
   }
 
   &:-webkit-autofill,

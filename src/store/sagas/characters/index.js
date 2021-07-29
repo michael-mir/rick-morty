@@ -8,11 +8,9 @@ import { GET_CHARACTERS_DATA } from '/store/types/characters';
 
 export function* getCharactersDataSaga({ payload }) {
   try {
+    const { results, info } = yield call(api.get, payload);
     const {
-      data: { results, info },
-    } = yield call(api.get, payload);
-    const {
-      entities: { messages: entities },
+      entities: { characters: entities },
       result: ids,
     } = normalize(results, [charactersSchema]);
 

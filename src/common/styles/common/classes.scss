@@ -1,3 +1,11 @@
+#root {
+  height: 100vh;
+  @include d-flex;
+  align-self: center;
+  flex-direction: column;
+  @include background('assets/background.jpg', cover);
+}
+
 .d-wrap {
   display: flex;
   flex-wrap: wrap;

@@ -1,7 +1,10 @@
 import StateModel from '/common/models/state';
 import * as ACTIONS from '/store/types/episodes';
 
-const initialState = new StateModel();
+const initialState = {
+  ...new StateModel(),
+  sort: {},
+};
 
 const episodesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
