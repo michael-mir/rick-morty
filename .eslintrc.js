@@ -24,8 +24,8 @@ module.exports = {
     browser: true,
   },
   extends: [
-    'airbnb-base',
     'prettier',
+    'airbnb-base',
     // 'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',

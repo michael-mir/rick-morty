@@ -102,7 +102,7 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({ patterns: [{ from: paths.assets, to: 'assets/[name].[ext]' }] }),
-    new EnvironmentPlugin({ 'NODE_ENV': NODE_ENV || 'development' }),
+    new EnvironmentPlugin({ NODE_ENV: NODE_ENV || 'development' }),
     new HtmlWebpackPlugin({
       template: paths.html,
       filename: 'index.html',
@@ -114,5 +114,5 @@ module.exports = {
     new NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(),
     new ProgressBarPlugin(),
-  ]
+  ],
 };

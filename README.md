@@ -1,13 +1,11 @@
 # Rick&Morty web app
 ---
 
-## Install packages
+## Install packages:
 npm ci
----
 
-## Start application
+## Start application:
 npm start
----
 
 ## Build application
 
