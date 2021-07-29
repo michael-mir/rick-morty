@@ -1,0 +1,10 @@
+@mixin bg-props($size: contain, $position: center) {
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+@mixin background($url, $size: contain) {
+  background-image: url($url);
+  @include bg-props($size);
+}

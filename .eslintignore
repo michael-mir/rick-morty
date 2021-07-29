@@ -1,0 +1,14 @@
+# Media files
+*.png
+*.svg
+*.jpg
+*.woff
+
+# Node artifact files
+/node_modules
+/dist
+
+# Other
+/public
+/config
+.history

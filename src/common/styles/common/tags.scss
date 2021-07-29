@@ -1,0 +1,72 @@
+* {
+  &::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 2px;
+    background: $lime;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $orange;
+    border-radius: 2px;
+    outline: none;
+    border: 0;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  @include d-flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+button {
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: underline;
+}
+
+*:not(svg, path) {
+  color: $black;
+}
+
+textarea,
+input {
+  caret-color: $black;
+
+  &:focus {
+    border-color: $black;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: $black;
+    box-shadow: 0 0 0 1000px lightsalmon inset;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}

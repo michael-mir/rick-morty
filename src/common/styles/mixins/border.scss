@@ -1,0 +1,32 @@
+@mixin radius($value: $r-xs) {
+  border-radius: $value;
+}
+
+@mixin border($color: $dark) {
+  border: $border $color;
+}
+
+@mixin border-radius($color: $dark, $radius: $r-xs) {
+  @include border($color);
+  @include radius($radius);
+}
+
+@mixin radius-top($value: $r-xs) {
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+
+@mixin radius-left($value: $r-xs) {
+  border-top-left-radius: $value;
+  border-bottom-left-radius: $value;
+}
+
+@mixin radius-right($value: $r-xs) {
+  border-top-right-radius: $value;
+  border-bottom-right-radius: $value;
+}
+
+@mixin radius-bottom($value: $r-xs) {
+  border-bottom-left-radius: $value;
+  border-bottom-right-radius: $value;
+}

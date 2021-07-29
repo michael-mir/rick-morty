@@ -1,0 +1,34 @@
+{
+  "description": "Rick&Morty Application",
+  "name": "Rick&Morty Application",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait",
+  "theme_color": "#FFFFFF",
+  "display": "standalone",
+  "short_name": "RR-App",
+  "start_url": "./",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "./icons/64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "./icons/128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "purpose": "any maskable",
+      "src": "./icons/256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "./icons/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

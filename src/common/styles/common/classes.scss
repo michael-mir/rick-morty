@@ -1,0 +1,64 @@
+.d-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.none-select {
+  user-select: none;
+}
+
+.text {
+  &-ellipsis {
+    @include overflow-nowrap;
+  }
+
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
+  &-black {
+    color: $black;
+  }
+
+  &-white {
+    color: $white;
+  }
+}
+
+@for $i from 0 through 24 {
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+}

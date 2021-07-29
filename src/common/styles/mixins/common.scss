@@ -1,0 +1,37 @@
+@mixin animation($time: 0.2s, $type: all, $animation: ease-in-out) {
+  transition-timing-function: $animation;
+  transition-property: $type;
+  transition-duration: $time;
+}
+
+@mixin size($value: 100%) {
+  height: $value;
+  width: $value;
+}
+
+@mixin wide($value, $offset: 0) {
+  margin: 0 -#{$value};
+  width: calc(100% + 2 * #{$value} + #{$offset});
+}
+
+@mixin min-size($value: 100%) {
+  @include size($value);
+  min-height: $value;
+  min-width: $value;
+}
+
+@mixin d-flex($x: center, $y: center) {
+  display: flex;
+  align-items: $x;
+  justify-content: $y;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+}
