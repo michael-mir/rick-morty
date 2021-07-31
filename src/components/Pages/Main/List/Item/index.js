@@ -3,17 +3,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ROUTES } from '/common/constants/routes';
+import { getEpisodePosition } from '/common/helpers/episodes';
 
 import styles from './index.module.scss';
 
 const EpisodesItem = ({ id, name, episode, air_date: airDate }) => {
-  const [number] = episode.match(/\d+$/);
+  const { index } = getEpisodePosition(episode);
 
   return (
     <Link className={styles.item} to={`${ROUTES.EPISODES}/${id}`}>
       <div className={styles.item__header}>
         <strong>
-          {+number}
+          {index}
         </strong>
         <span>
           {name}

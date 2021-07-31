@@ -15,6 +15,10 @@ const locationsReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         ...payload,
+        entities: {
+          ...state.entities,
+          ...payload.entities,
+        },
         isProcessing: false,
       };
 

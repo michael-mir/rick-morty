@@ -1,0 +1,5 @@
+.list {
+  @include d-flex(flex-start, flex-start);
+  flex-direction: row;
+  flex-wrap: wrap;
+}

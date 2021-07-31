@@ -1,16 +1,20 @@
 import { createSelector } from 'reselect';
 
 import { ENTITIES } from '/common/constants/redux';
+import { getEpisodePosition } from '/common/helpers/episodes';
 import { createPureSelector, createStateSelector } from '/common/helpers/reselect';
 
 const getState = createStateSelector(ENTITIES.EPISODES);
 const getSortValue = (state) => getState(state).sort;
 const getEpisodesList = (state) => getState(state).entities;
 const getProcessingStatus = (state) => getState(state).isProcessing;
-const getEpisodeById = (state, { id }) => getEpisodesList(state)[id];
+const getEpisodeByPosition = (state, { position }) => getEpisodesList(state)[position];
+const getEpisodeById = (state, own) => Object.values(getEpisodesList(state))
+  .find(({ id }) => own.id === id);
 
-export const episodeByIdSelector = createPureSelector(getEpisodeById, {});
+export const episodeByPositionSelector = createPureSelector(getEpisodeByPosition, {});
 export const processingStatusSelector = createPureSelector(getProcessingStatus);
+export const episodeByIdSelector = createPureSelector(getEpisodeById, {});
 export const episodesListSelector = createSelector(
   [getEpisodesList, getSortValue],
   (entities, sort) => {
@@ -26,7 +30,7 @@ export const episodesListSelector = createSelector(
     }
 
     return items.reduce((obj, { id, episode }) => {
-      const [season] = episode.match(/\d+/);
+      const { season } = getEpisodePosition(episode);
 
       return {
         ...obj,

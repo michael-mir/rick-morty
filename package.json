@@ -24,10 +24,6 @@
     ],
     "src/**/*.{js,jsx}": [
       "npm run lint:js"
-    ],
-    "src/**/*.{js,jsx,scss,sass}": [
-      "npm run prettier",
-      "git add ."
     ]
   },
   "browserslist": [

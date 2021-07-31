@@ -5,6 +5,7 @@ const initialState = new StateModel();
 
 const charactersReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case ACTIONS.GET_CHARACTERS_LIST:
     case ACTIONS.GET_CHARACTERS_DATA:
       return {
         ...state,
@@ -15,6 +16,10 @@ const charactersReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         ...payload,
+        entities: {
+          ...state.entities,
+          ...payload.entities,
+        },
         isProcessing: false,
       };
 

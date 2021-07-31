@@ -18,19 +18,19 @@ const RootRouter = () => (
       <Route
         path={ROUTES.EPISODE}
         render={({ match: { params: { id } } }) => (
-          <EpisodePageContainer id={id} />
+          <EpisodePageContainer id={+id} />
         )}
       />
       <Route
         path={ROUTES.LOCATION}
         render={({ match: { params: { id } } }) => (
-          <LocationPageContainer id={id} />
+          <LocationPageContainer id={+id} />
         )}
       />
       <Route
         path={ROUTES.CHARACTER}
         render={({ match: { params: { id } } }) => (
-          <CharacterPageContainer id={id} />
+          <CharacterPageContainer id={+id} />
         )}
       />
       <Route

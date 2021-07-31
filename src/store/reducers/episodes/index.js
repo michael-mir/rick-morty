@@ -8,6 +8,7 @@ const initialState = {
 
 const episodesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case ACTIONS.GET_EPISODE_BY_ID:
     case ACTIONS.GET_EPISODES_DATA:
       return {
         ...state,
@@ -18,6 +19,10 @@ const episodesReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         ...payload,
+        entities: {
+          ...state.entities,
+          ...payload.entities,
+        },
         isProcessing: false,
       };
 

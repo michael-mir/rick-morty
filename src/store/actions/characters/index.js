@@ -19,3 +19,8 @@ export const getCharacterById = (payload) => ({
   type: TYPES.GET_CHARACTER_BY_ID,
   payload,
 });
+
+export const getCharactersList = (payload) => ({
+  type: TYPES.GET_CHARACTERS_LIST,
+  payload,
+});

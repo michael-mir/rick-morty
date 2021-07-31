@@ -18,7 +18,7 @@ const EpisodesList = ({ isProcessing, items }) => isProcessing ? (
         <div className={styles.season__episodes}>
           {episodes.map((id) => (
             <EpisodesItemContainer
-              id={id}
+              position={id}
               key={id}
             />
           ))}

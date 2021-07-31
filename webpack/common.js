@@ -17,6 +17,7 @@ module.exports = {
   entry: paths.indexJs,
   output: {
     clean: true,
+    publicPath: '/',
     path: paths.build,
     filename: 'js/[name].[hash].bundle.js',
     chunkFilename: '[name].[hash].bundle.js',
