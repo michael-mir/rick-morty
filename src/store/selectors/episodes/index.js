@@ -6,6 +6,7 @@ import { createPureSelector, createStateSelector } from '/common/helpers/reselec
 
 const getState = createStateSelector(ENTITIES.EPISODES);
 const getSortValue = (state) => getState(state).sort;
+const getEpisodesIds = (state) => getState(state).ids;
 const getEpisodesList = (state) => getState(state).entities;
 const getProcessingStatus = (state) => getState(state).isProcessing;
 const getEpisodeByPosition = (state, { position }) => getEpisodesList(state)[position];
@@ -15,11 +16,12 @@ const getEpisodeById = (state, own) => Object.values(getEpisodesList(state))
 export const episodeByPositionSelector = createPureSelector(getEpisodeByPosition, {});
 export const processingStatusSelector = createPureSelector(getProcessingStatus);
 export const episodeByIdSelector = createPureSelector(getEpisodeById, {});
+export const episodesIdsSelector = createPureSelector(getEpisodesIds);
 export const episodesListSelector = createSelector(
-  [getEpisodesList, getSortValue],
-  (entities, sort) => {
+  [getEpisodesList, getEpisodesIds, getSortValue],
+  (entities, ids, sort) => {
     const [[field, direction] = []] = Object.entries(sort);
-    let items = Object.values(entities);
+    let items = ids.map(id => entities[id]);
 
     if (field) {
       items = items.sort((a, b) => {

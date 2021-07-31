@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
 const EpisodesSort = () => (
@@ -6,9 +5,5 @@ const EpisodesSort = () => (
 
   </div>
 );
-
-EpisodesSort.propTypes = {
-  onSort: PropTypes.func.isRequired,
-};
 
 export default EpisodesSort;

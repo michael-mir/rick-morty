@@ -1,12 +1,10 @@
 .episodesList {
+  display: flex;
   overflow-y: auto;
-  height: 100%;
+  flex-direction: column;
+  height: calc(100% - 65px);
 
   .season {
-    &__header {
-      color: #141414;
-    }
-
     &__episodes {
       @include d-flex(flex-start, flex-start);
       flex-direction: row;

@@ -7,7 +7,11 @@ import CharactersItemContainer from '/containers/EpisodePage/CharactersItemConta
 import styles from './index.module.scss';
 
 const CharactersList = ({ isProcessing, ids }) => isProcessing ? (
-  <Spinner className="text-white" animation="border" />
+  <Spinner
+    variant="light"
+    className="m-auto"
+    animation="border"
+  />
 ) : (
   <div className={styles.list}>
     {ids.map(id => (

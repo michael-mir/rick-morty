@@ -23,7 +23,7 @@
       margin-right: 16px;
       @include size(36px);
       @include radius(50%);
-      background-color: #f60;
+      background-color: $orange;
     }
 
     span {

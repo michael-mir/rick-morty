@@ -1,12 +1,13 @@
 import React from 'react';
 
+import EpisodesSearchContainer from '/containers/MainPage/EpisodesSearchContainer';
+
 import styles from './index.module.scss';
-import EpisodesSearch from './Search';
 import EpisodesSort from './Sort';
 
 const EpisodesFilters = () => (
   <div className={styles.filters}>
-    <EpisodesSearch />
+    <EpisodesSearchContainer />
     <EpisodesSort />
   </div>
 );

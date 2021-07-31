@@ -16,7 +16,7 @@ export function* getEpisodesDataSaga({ payload }) {
 
     yield put(fillEpisodesData({ entities, info, ids }));
   } catch (error) {
-    yield put(fillEpisodesData({ error }));
+    yield put(fillEpisodesData({ error, ids: [] }));
   }
 }
 

@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import './common/styles/index.scss';
 
 import React from 'react';

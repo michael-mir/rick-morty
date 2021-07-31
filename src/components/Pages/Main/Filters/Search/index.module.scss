@@ -1,0 +1,18 @@
+.field {
+  margin-bottom: 16px;
+  @include radius(.8rem);
+  background-color: $white;
+
+  &__icon {
+    @include animation;
+    cursor: pointer;
+
+    svg {
+      color: $orange;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

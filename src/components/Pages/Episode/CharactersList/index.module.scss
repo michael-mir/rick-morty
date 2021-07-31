@@ -1,5 +1,6 @@
 .list {
   @include d-flex(flex-start, flex-start);
   flex-direction: row;
+  padding-top: 8px;
   flex-wrap: wrap;
 }

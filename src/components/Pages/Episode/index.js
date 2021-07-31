@@ -25,7 +25,11 @@ const EpisodePage = ({ episodeInfo, isProcessing, getCharacters, getEpisodeInfo 
   return (
     <PageWrapper>
       {isProcessing ? (
-        <Spinner className="text-white" animation="border" />
+        <Spinner
+          variant="light"
+          className="m-auto"
+          animation="border"
+        />
       ) : (
         <div className={styles.page}>
           <h1>

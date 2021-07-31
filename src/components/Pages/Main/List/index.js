@@ -6,25 +6,33 @@ import EpisodesItemContainer from '/containers/MainPage/EpisodesItemContainer';
 
 import styles from './index.module.scss';
 
-const EpisodesList = ({ isProcessing, items }) => isProcessing ? (
-  <Spinner className="text-white" animation="border" />
-) : (
+const EpisodesList = ({ isProcessing, items }) => (
   <div className={styles.episodesList}>
-    {Object.entries(items).map(([season, episodes]) => (
-      <div key={season} className={styles.season}>
-        <h2 className={styles.season__header}>
-          Season {+season}
-        </h2>
-        <div className={styles.season__episodes}>
-          {episodes.map((id) => (
-            <EpisodesItemContainer
-              position={id}
-              key={id}
-            />
-          ))}
-        </div>
-      </div>
-    ))}
+    {isProcessing ? (
+      <Spinner
+        variant="light"
+        className="m-auto"
+        animation="border"
+      />
+    ) : (
+      <>
+        {Object.entries(items).map(([season, episodes]) => (
+          <div key={season} className={styles.season}>
+            <h2 className="mb-16">
+              Season {+season}
+            </h2>
+            <div className={styles.season__episodes}>
+              {episodes.map((id) => (
+                <EpisodesItemContainer
+                  position={id}
+                  key={id}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </>
+    )}
   </div>
 );
 

@@ -5,11 +5,6 @@
 	padding: 10px;
 	@include d-flex;
 	transition: .25s;
-	border: $border gray;
-
-	&_error {
-		border-color: red;
-	}
 
 	&__icon {
 		@include size(30px);

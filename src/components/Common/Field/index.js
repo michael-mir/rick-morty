@@ -2,14 +2,17 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
 
+import { empty } from '/common/helpers/common';
+
 import styles from './index.module.scss';
 
 const Field = ({
-  onClick = () => {},
+  onClickLeft = empty,
+  iconClassName = '',
   rightIcon = null,
   leftIcon = null,
+  onClick = empty,
   className = '',
-  error = false,
   icons = [],
   ...props
 }) => {
@@ -19,14 +22,13 @@ const Field = ({
   return (
     <div
       onClick={() => inputRef.current?.focus()}
-      className={classNames(
-        styles.field,
-        className,
-        { [styles.field_error]: error },
-      )}
+      className={classNames(styles.field, className)}
     >
       {LeftIcon && (
-        <div className={styles.field__icon}>
+        <div
+          className={classNames(styles.field__icon, iconClassName)}
+          onClick={onClickLeft}
+        >
           <LeftIcon />
         </div>
       )}
@@ -34,7 +36,10 @@ const Field = ({
       <input {...props} ref={inputRef} />
 
       {RightIcon && (
-        <div className={styles.field__icon} onClick={onClick}>
+        <div
+          className={classNames(styles.field__icon, iconClassName)}
+          onClick={onClick}
+        >
           <RightIcon />
         </div>
       )}
@@ -47,6 +52,8 @@ Field.propTypes = {
   error: PropTypes.bool,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  onClickLeft: PropTypes.func,
+  iconClassName: PropTypes.string,
   leftIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   rightIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   icons: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.node, PropTypes.func])),

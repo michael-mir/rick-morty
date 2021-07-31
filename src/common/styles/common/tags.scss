@@ -8,7 +8,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #f60;
+    background-color: $orange;
     border-radius: 2px;
     outline: none;
     border: 0;
@@ -46,10 +46,10 @@ a {
 
 textarea,
 input {
-  caret-color: #f60;
+  caret-color: $orange;
 
   &:focus {
-    border-color: #f60;
+    border-color: $orange;
   }
 
   &:-webkit-autofill,
