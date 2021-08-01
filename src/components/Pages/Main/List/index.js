@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
 
+import List from '/components/Common/List';
+import Loader from '/components/Common/Loader';
 import EpisodesItemContainer from '/containers/MainPage/EpisodesItemContainer';
 
 import styles from './index.module.scss';
@@ -9,26 +10,23 @@ import styles from './index.module.scss';
 const EpisodesList = ({ isProcessing, items }) => (
   <div className={styles.episodesList}>
     {isProcessing ? (
-      <Spinner
-        variant="light"
-        className="m-auto"
-        animation="border"
-      />
+      <Loader />
     ) : (
       <>
         {Object.entries(items).map(([season, episodes]) => (
-          <div key={season} className={styles.season}>
+          <div key={season} className={styles.episodesList__season}>
             <h2 className="mb-16">
               Season {+season}
             </h2>
-            <div className={styles.season__episodes}>
-              {episodes.map((id) => (
+            <List
+              keys={episodes}
+              item={({ itemKey }) => (
                 <EpisodesItemContainer
-                  position={id}
-                  key={id}
+                  position={itemKey}
+                  key={itemKey}
                 />
-              ))}
-            </div>
+              )}
+            />
           </div>
         ))}
       </>

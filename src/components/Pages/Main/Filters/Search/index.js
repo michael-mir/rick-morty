@@ -1,22 +1,29 @@
 import PropTypes from 'prop-types';
 import { parse } from 'qs';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import Close from '/assets/svg/close.svg';
 import Search from '/assets/svg/search.svg';
+import useOnChange from '/common/hooks/onChange';
 import Field from '/components/Common/Field';
 
 import styles from './index.module.scss';
 
 const EpisodesSearch = ({ onSearch, history, location }) => {
   const { name = '' } = parse(location.search, { ignoreQueryPrefix: true });
-  const [value, setValue] = useState(name);
+  const [value, onChange, onClear] = useOnChange(name);
 
-  const onSubmit = () => history.push(`${location.pathname}?name=${value}`);
-  const onChange = ({ target }) => setValue(target.value);
-  const onClear = () => setValue('');
+  const onSubmit = () => {
+    let url = location.pathname;
 
-  useEffect(() => { onSearch(name); }, [name]);
+    if (value) {
+      url += `?name=${value}`;
+    }
+
+    history.push(url);
+  };
+
+  useEffect(() => { onSearch(name ? { name } : {}); }, [name]);
 
   return (
     <Field

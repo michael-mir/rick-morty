@@ -1,26 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
 
+import List from '/components/Common/List';
+import Loader from '/components/Common/Loader';
 import CharactersItemContainer from '/containers/EpisodePage/CharactersItemContainer';
 
-import styles from './index.module.scss';
-
 const CharactersList = ({ isProcessing, ids }) => isProcessing ? (
-  <Spinner
-    variant="light"
-    className="m-auto"
-    animation="border"
-  />
+  <Loader />
 ) : (
-  <div className={styles.list}>
-    {ids.map(id => (
+  <List
+    keys={ids}
+    className="pt-8"
+    item={({ itemKey }) => (
       <CharactersItemContainer
-        id={id}
-        key={id}
+        id={itemKey}
+        key={itemKey}
       />
-    ))}
-  </div>
+    )}
+  />
 );
 
 CharactersList.propTypes = {

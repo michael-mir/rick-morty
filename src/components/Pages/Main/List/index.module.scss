@@ -3,14 +3,4 @@
   overflow-y: auto;
   flex-direction: column;
   height: calc(100% - 65px);
-
-  .season {
-    &__episodes {
-      @include d-flex(flex-start, flex-start);
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
-
-
 }

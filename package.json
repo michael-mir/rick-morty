@@ -23,8 +23,7 @@
       "npm run lint:style"
     ],
     "src/**/*.{js,jsx}": [
-      "npm run lint:js",
-      "npm run prettier"
+      "npm run lint:js"
     ],
     "src/**/*.{js,jsx,scss,sass}": [
       "git add ."

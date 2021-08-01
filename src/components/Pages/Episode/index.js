@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
-import { Spinner } from 'react-bootstrap';
 
 import { getEpisodePosition } from '/common/helpers/episodes';
 import useMount from '/common/hooks/mount';
+import Loader from '/components/Common/Loader';
 import PageWrapper from '/components/Common/PageWrapper';
 import CharactersListContainer from '/containers/EpisodePage/CharactersListContainer';
 
@@ -25,11 +25,7 @@ const EpisodePage = ({ episodeInfo, isProcessing, getCharacters, getEpisodeInfo 
   return (
     <PageWrapper>
       {isProcessing ? (
-        <Spinner
-          variant="light"
-          className="m-auto"
-          animation="border"
-        />
+        <Loader />
       ) : (
         <div className={styles.page}>
           <h1>
